@@ -1,4 +1,15 @@
 import PropTypes from "prop-types";
+import {
+  ProfileContainer,
+  ProfileDescription,
+  ProfileName,
+  ProfileTag,
+  ProfileLocation,
+  Statistics,
+  StatsListWraper,
+  StatsTitle,
+  StatsQuantity,
+} from "./Profile.styled";
 
 const Profile = ({
   username,
@@ -8,29 +19,29 @@ const Profile = ({
   stats: { followers, likes, views },
 }) => {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt="User avatar" className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
-      </div>
+    <ProfileContainer>
+      <ProfileDescription>
+        <img src={avatar} alt="User avatar" />
+        <ProfileName>{username}</ProfileName>
+        <ProfileTag>@{tag}</ProfileTag>
+        <ProfileLocation>{location}</ProfileLocation>
+      </ProfileDescription>
 
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity"> {followers}</span>
-        </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity"> {views}</span>
-        </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity"> {likes}</span>
-        </li>
-      </ul>
-    </div>
+      <Statistics>
+        <StatsListWraper>
+          <StatsTitle>Followers</StatsTitle>
+          <StatsQuantity> {followers}</StatsQuantity>
+        </StatsListWraper>
+        <StatsListWraper>
+          <StatsTitle>Views</StatsTitle>
+          <StatsQuantity> {views}</StatsQuantity>
+        </StatsListWraper>
+        <StatsListWraper>
+          <StatsTitle>Likes</StatsTitle>
+          <StatsQuantity> {likes}</StatsQuantity>
+        </StatsListWraper>
+      </Statistics>
+    </ProfileContainer>
   );
 };
 
