@@ -4,8 +4,7 @@ export const ProfileContainer = styled.div`
   margin: 30px auto;
   max-width: 250px;
   background-color: white;
-  box-shadow: 0 0 15px 0 rgba(80, 2, 2, 0.4);
-  /* border-color: #070000 4px; */
+  box-shadow: 0 0 15px 0 rgba(158, 154, 154, 0.4);
   border-radius: 8px;
 
   text-align: center;
